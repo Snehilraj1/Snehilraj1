@@ -1,0 +1,35 @@
+# GUESS THE NUMBER
+
+import random
+
+for n in range(1):
+    n = random.randint(0, 100)
+
+g = 0
+
+print("Enter a 2 digit number. Number of guessed are 9.")
+
+while(1):
+    num1 = int(input())
+    if num1<0 or num1>100:
+        print("Invalid number")
+    elif num1>n:
+        print("Enter a smaller number")
+        g = g+1
+        print("You have", 9-g, "guesses\n")
+        if g==9:
+            print("Game over." + "The number was\n", n)
+            break
+        continue 
+    elif num1<n :
+        print("Enter a bigger number")
+        g=g+1
+        print("You have", 9-g, "guesses\n")
+        if g==9:
+            print("Game over")
+            break
+        continue
+    elif num1==n:
+        g = g+1
+        print("Congrats. You have completed the game in", g, "number of guesses ")
+        break
