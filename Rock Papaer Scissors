@@ -1,0 +1,48 @@
+# ROCK, PAPER AND SCISSORS
+
+import random
+
+while(1):
+
+    for num in range(1):
+        num = random.uniform(0,3)
+
+    if num>0 and num<1:
+        num = "rock"
+    elif num>1 and num<2:
+        num = "paper"
+    else:
+        num = "scissors"
+    print("Enter a option (1/2/3). (1= rock, 2= paper, 3 = scissor)")
+
+
+    inp = int(input())
+
+    if inp>3:
+        print("Number is Invalid")
+        break
+
+    if inp==1:
+        inp = "rock"
+    elif inp==2:
+        inp = "paper"
+    else:
+        inp = "scissor"
+
+    if (num== "rock" and inp=="scissor") or (num== "paper" and inp=="rock") or (num== "scissor" and inp=="paper"):
+        print("Computer won the game")
+        print("You choses",inp)
+        print("Opponent Chooses", num)
+        break
+        
+    elif (inp== "rock" and num=="scissor") or (inp== "paper" and num=="rock") or (inp== "scissor" and num=="paper") :
+        print("You won ")
+        print("You choses",inp)
+        print("Opponent Chooses", num)
+        break
+        
+    else:
+        print("Game in tied")
+    print("You choses",inp)
+    print("Opponent Chooses", num)
+    break
